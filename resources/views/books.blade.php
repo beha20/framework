@@ -5,6 +5,7 @@
         <tr>
             <th class="text-primary"></th>
             <th class="text-primary">ISBN</th>
+            <th class="text-primary">Title</th>
             <th class="text-primary">Author</th>
             <th class="text-primary">Image</th>
         </tr>
@@ -15,6 +16,7 @@
                 <tr>
                     <td class="text-center">{{ $book->id }}</td>
                     <td class="text-center text-success">{{ $book->isbn }}</td>
+                    <td class="text-center">{{ $book->title }}</td>
                     <td class="text-left">{{ $book->author }}</td>
                     <td class="text-center"><img src="{{ asset('/images/books/' . $book->image_url) }}" /></td>
                 </tr>
