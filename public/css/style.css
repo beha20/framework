@@ -104,6 +104,18 @@ button.btn-submit {
     color: #5c90d2
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
 img.dice {
     width: 50px;
     height: 50px;
@@ -168,4 +180,18 @@ button.btn.btn-primary {
 
 .rotate1 {
     animation: rotation 0.2s linear;
+}
+
+table.books {
+    width: 100%;
+    margin: 1rem 0;
+}
+table.books th {
+    background-color: #333;
+    color: #fff;
+}
+table.books th,
+table.books td {
+    border: 1px solid #777;
+    padding: 0.5rem;
 }

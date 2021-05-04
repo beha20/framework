@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DiceGameController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::get('game21/view/history', [DiceGameController::class, 'viewHistory'], fu
 })->name('game21-view-history');
 Route::get('game21/clear/history', [DiceGameController::class, 'clearHistory'], function () {
 })->name('game21-clear-history');
+Route::get('game21/view/highscores', [DiceGameController::class, 'viewHighscores'], function () {
+})->name('game21-view-highscores');
+Route::get('books', [BookController::class, 'index'], function () {
+})->name('books');
