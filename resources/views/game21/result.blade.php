@@ -5,6 +5,7 @@
 <h2 class="text-italic">{{ $message }}</h2>
 <p>Your points: {{ $yourPoints }}</p>
 <p>Computer points: {{ $computerPoints }}</p>
+<h3 class="text-italic text-info">{{ $highScoreMsg }}</h3>
 
 <h2>Game History</h2>
 <p>Your wins: {{ $yourWins }}</p>

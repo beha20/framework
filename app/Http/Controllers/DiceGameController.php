@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Dice\DiceHand;
+use App\Models\HighScores;
+
+use DateTime;
 
 class DiceGameController extends Controller
 {   
@@ -88,6 +91,20 @@ class DiceGameController extends Controller
         array_push($histories, $history);
         session(['history' => $histories]);
     }
+    protected function getHighScore()
+    {
+        $maxScore = HighScores::max('score');
+        return ($maxScore == null) ? 0 : $maxScore;
+    }
+    protected function saveHighScore($player, $score)
+    {
+        $date = DateTime::createFromFormat('Y-m-d H:s:i', now());
+        HighScores::insert([
+                                'date'      => $date,
+                                'player'    => $player,
+                                'score'     => $score
+                            ]);
+    }
     public function index() 
     {
         $this->initSessionGame21();
@@ -154,20 +171,31 @@ class DiceGameController extends Controller
         }
         $winner = $this->getWinner();
         $message = '';
+        $maxScore = $this->getHighScore();
+        $highScoreMsg = '';
+
         if ($winner == 'You') {
             $message = 'You Won!';
             $yourWins = session('your-wins');
             session(['your-wins' => ++$yourWins]);
+            if ($maxScore < session('your-points')) {
+                $this->saveHighScore('You', session('your-points'));
+                $highScoreMsg = 'You got high score!';
+            }
         } elseif ($winner == 'Computer') {
             $message = 'You Lose!';
             $computerWins = session('computer-wins');
             session(['computer-wins' => ++$computerWins]);
+            if ($maxScore < session('computer-points')) {
+                $this->saveHighScore('Computer', session('computer-points'));
+                $highScoreMsg = 'Computer got high score!';
+            }
         } else {
             return redirect()->route('game21-view-history');
         }
         
         $this->updateHistory($winner);
-
+        
         return view('game21.result', [
             'pageName'          => 'Game21',
             'menuGame21Class'   => 'selected',
@@ -175,7 +203,8 @@ class DiceGameController extends Controller
             'computerPoints'    => session('computer-points'),
             'yourWins'          => session('your-wins'),
             'computerWins'      => session('computer-wins'),
-            'message'           => $message
+            'message'           => $message,
+            'highScoreMsg'      => $highScoreMsg
         ]);
     }
     public function viewHistory()
@@ -185,7 +214,7 @@ class DiceGameController extends Controller
         }
         return view('game21.history', [
             'pageName'          => 'Game21',
-            'menuHistoryClass'   => 'selected',
+            'menuHistoryClass'  => 'selected',
             'yourWins'          => session('your-wins'),
             'computerWins'      => session('computer-wins'),
             'history'           => session('history')
@@ -196,5 +225,23 @@ class DiceGameController extends Controller
         $this->clearSessionGame21();
 
         return redirect()->route('game21');
+    }
+    public function viewHighScores()
+    {
+        $highScores = HighScores::orderBy('score', 'DESC')->get();
+        return view('game21.highscores', [
+            'pageName'              => 'Game21',
+            'menuHighscoresClass'   => 'selected',
+            'highScores'            => $highScores
+        ]);
+    }
+    public function clearHighScores()
+    {
+        HighScores::truncate();
+        return view('game21.highscores', [
+            'pageName'              => 'Game21',
+            'menuHighscoresClass'   => 'selected',
+            'highScores'            => []
+        ]);
     }
 }
