@@ -23,7 +23,7 @@
             @endforeach
         @else
             <tr>
-                <td class="text-danger" colspan="3">No books !</td>
+                <td class="text-danger" colspan="5">No books !</td>
             </tr>
         @endif
     </tbody>
