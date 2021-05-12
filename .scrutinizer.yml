@@ -14,7 +14,6 @@ build:
 
     tests:
         before:
-            - php artisan key:generate
         override:
             -
                 command: make phpunit
