@@ -79,7 +79,6 @@ class DiceGameController extends Controller
     }
     protected function updateHistory($winner)
     {
-        $histories = [];
         $history = array(
             'winner'            => $winner,
             'your-points'       => session('your-points'),
