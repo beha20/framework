@@ -1,0 +1,16 @@
+0000000000000000000000000000000000000000 72acf1638a45dfae3fdb097087aaaca495fe3386 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620090434 +0200	clone: from https://github.com/beha20/framework.git
+72acf1638a45dfae3fdb097087aaaca495fe3386 de1416a53fdd41a64bfb4d248d8fd38120b86b59 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620145137 +0200	commit: orm - added books
+de1416a53fdd41a64bfb4d248d8fd38120b86b59 50304f9ddf38933c4230849c794d9fdf6e638a0d Benaris Hajduk <benaris.hajduk87@gmail.com> 1620146718 +0200	commit: orm - added images for books
+50304f9ddf38933c4230849c794d9fdf6e638a0d ecbe9d0e2feaebc9f4621557faaf0b37bd6ff59e Benaris Hajduk <benaris.hajduk87@gmail.com> 1620146835 +0200	commit: orm - added missed title
+ecbe9d0e2feaebc9f4621557faaf0b37bd6ff59e 3d49b0ff4f34b54764510bf60058b24795eb2323 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620513365 +0200	commit: updated books page
+3d49b0ff4f34b54764510bf60058b24795eb2323 f21a5e6b750ce3285e8d4437b58e70291a07e632 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620513515 +0200	commit: added highscores in game21
+f21a5e6b750ce3285e8d4437b58e70291a07e632 65db66e90d7a30f9a829d7c1f4be66ca67c80d62 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620518399 +0200	commit: updated database setting and htaccess
+65db66e90d7a30f9a829d7c1f4be66ca67c80d62 b4578cf50f52ab2c98b016fb997417ba2da0ac59 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620652148 +0200	commit: travis-ci
+b4578cf50f52ab2c98b016fb997417ba2da0ac59 2f7c38efb39bcf42ed0200d36ef45f3c5551cd3f Benaris Hajduk <benaris.hajduk87@gmail.com> 1620831657 +0200	commit: added scrutinizer
+2f7c38efb39bcf42ed0200d36ef45f3c5551cd3f 84ea486908bef2a9abb11c67854f40ec20a2f935 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620833199 +0200	commit: updated scrutinizer and readme
+84ea486908bef2a9abb11c67854f40ec20a2f935 be8d5e1ad293bbe8887772a8ccdb1cfe76c70605 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620834529 +0200	commit: added env.scrutinizer
+be8d5e1ad293bbe8887772a8ccdb1cfe76c70605 1b8022eadd9e2aaa8d75b377f4f3d3fb7ed11684 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620835281 +0200	commit: added env.scrutinizer
+1b8022eadd9e2aaa8d75b377f4f3d3fb7ed11684 5c01a9013a47a4d93552384f0efaf5f8ebebcac4 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620836051 +0200	commit: updated scrutinizer
+5c01a9013a47a4d93552384f0efaf5f8ebebcac4 713c8d40abff136ebf6b5bf6aecbcfe02deaeacd Benaris Hajduk <benaris.hajduk87@gmail.com> 1620837003 +0200	commit: updated scrutinizer
+713c8d40abff136ebf6b5bf6aecbcfe02deaeacd 0f34464184fdbfdd2ca804b3c88d724a27aba748 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620838018 +0200	commit: updated scrutinizer
+0f34464184fdbfdd2ca804b3c88d724a27aba748 7c9467e19f17b51e289889c1939a0cc8901b5208 Benaris Hajduk <benaris.hajduk87@gmail.com> 1620847819 +0200	commit: updated scrutinizer
