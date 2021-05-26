@@ -5,42 +5,19 @@ namespace Tests\Unit;
 // use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 use App\Http\Controllers\DiceGameController;
+use App\Models\History;
+use App\Models\Settings;
+use App\Models\HighScores;
+
 
 class ControllerDiceGameTest extends TestCase
 {
     /**
-     * test game21 index
+     * test viewHelp
      */
-    public function testIndex()
+    public function testViewHelp()
     {
-        $response = $this->get('/game21');
-        $response->assertStatus(200);
-    }
-
-    /**
-     * test saveSetting
-     */
-    public function testSaveSetting()
-    {
-        $response = $this->post('/game21', ['cnt-dices' => 2]);
-        $response->assertStatus(200);
-    }
-
-    /**
-     * test playRoll
-     */
-    public function testPlayRoll()
-    {
-        $response = $this->get('/game21/player/roll');
-        $response->assertStatus(200);
-    }
-
-    /**
-     * test viewHistory
-     */
-    public function testViewHistory()
-    {
-        $response = $this->get('/game21/view/history');
+        $response = $this->get('/game21/view/help');
         $response->assertStatus(200);
     }
 
@@ -55,5 +32,25 @@ class ControllerDiceGameTest extends TestCase
         $controller = new DiceGameController();
         $winner = $controller->getWinner();
         $this->assertEquals($winner, 'You');
+    }
+
+    /**
+     * test initSessionGame21
+     */
+    public function testInitSessionGame21()
+    {
+        $controller = new DiceGameController();
+        $controller->initSessionGame21();
+        $this->assertEquals(session('cnt-dices'), 2);
+    }
+
+    /**
+     * test saveSettingGame21
+     */
+    public function testSaveSettingGame21()
+    {
+        $controller = new DiceGameController();
+        $controller->saveSettingGame21(2, 5);
+        $this->assertEquals(session('bet-amount'), 5);
     }
 }
